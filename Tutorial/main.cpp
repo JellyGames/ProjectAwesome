@@ -1,4 +1,4 @@
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <Windows.h>
 #include <iostream>
 #include <stdio.h>
