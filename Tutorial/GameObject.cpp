@@ -5,7 +5,7 @@ GameObject::GameObject(char* texturePath,SDL_Rect sourceRectangle,SDL_Rect destR
 
 	sRect = sourceRectangle;
 	dRect = destRect;
-	
+	texture = IMG_LoadTexture(renderer,texturePath);
 
 };
 
