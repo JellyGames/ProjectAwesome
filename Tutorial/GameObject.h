@@ -3,10 +3,12 @@
 
 #include <SDL.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <iostream>
 #include <Windows.h>
 #include <SDL_image.h>
-
+#include <conio.h>
+#include <vector>
 
 class GameObject
 {
