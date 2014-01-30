@@ -11,7 +11,7 @@ class Game
 {
 public:
 	//Methods
-	Game(void);
+	Game(void); 
 	~Game(void);
 	void Initialize();
 	void regulateRenderFrameRate();
@@ -31,4 +31,3 @@ public:
 };
 
 #endif
-

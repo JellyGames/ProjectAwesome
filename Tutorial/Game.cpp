@@ -21,7 +21,7 @@ Game::Game(void)
 }
 Uint32 nextFrameR; 
 int framesSkippedR; 
-int maxFrameSkipR = 5; 
+int maxFrameSkipR = 5;  
 int skipFramesBehindR = 5; 
 int frameLengthR = 17; 
 void Game::regulateRenderFrameRate()
