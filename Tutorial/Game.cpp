@@ -1,7 +1,7 @@
 #include "Game.h"
 
 Game::Game(void)
-{
+{ 
 	done = false;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
