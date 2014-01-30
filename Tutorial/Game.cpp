@@ -24,6 +24,23 @@ int framesSkippedR;
 int maxFrameSkipR = 5;  
 int skipFramesBehindR = 5; 
 int frameLengthR = 17; 
+//for rectangle initialization works only for an existing one
+void Game::InitRect(SDL_Rect* rec,int h,int w,int x,int y)
+{
+	rec->h = h;
+	rec->w = w;
+	rec->x = x;
+	rec->y = y;
+}
+SDL_Rect Game::CreateRect(int h ,int w,int x, int y)
+{
+	SDL_Rect rec;
+	rec.h = h;
+	rec.w = w;
+	rec.x = x;
+	rec.y = y;
+	return rec;
+}
 void Game::regulateRenderFrameRate()
 { 
 	// get time between next frame and now 

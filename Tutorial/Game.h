@@ -20,6 +20,8 @@ public:
 	void doFrame(bool draw);
 	void Update();
 	void Draw();
+	void InitRect(SDL_Rect* rec,int h,int w,int x,int y);
+	SDL_Rect CreateRect(int h ,int w,int x, int y);
 
 	//Fields
 	bool done;
