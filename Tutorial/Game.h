@@ -1,5 +1,5 @@
-#ifndef _GAMEOBJECT_H_
-#define _GAMEOBJECT_H_
+#ifndef _GAME_H_
+#define _GAME_H_
 #include <SDL.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -7,6 +7,7 @@
 #include <conio.h>
 #include <vector>
 #include <Windows.h> 
+#include "GameObject.h"
 class Game
 {
 public:
@@ -24,6 +25,7 @@ public:
 	SDL_Rect CreateRect(int h ,int w,int x, int y);
 
 	//Fields
+	GameObject* objectGame;
 	bool done;
 	SDL_Window* cWindow;
 	SDL_Renderer* cRenderer;

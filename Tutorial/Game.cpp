@@ -100,7 +100,7 @@ void Game::doFrame(bool draw)
 }
 void Game::Initialize()
 {
-
+	objectGame = new GameObject("Images\jelly.png",CreateRect(128,128,120,120),CreateRect(128,128,120,120),cRenderer);
 }
 void Game::GetInput()
 {
@@ -124,7 +124,7 @@ void Game::Draw()
 {
 	GetInput();
 	SDL_RenderClear(cRenderer);
-
+	objectGame->Draw(cRenderer);
 	SDL_RenderPresent(cRenderer);
 }
 Game::~Game(void)
