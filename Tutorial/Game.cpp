@@ -1,5 +1,5 @@
 #include "Game.h"
-
+using namespace std;
 Game::Game(void)
 { 
 	done = false;
@@ -11,6 +11,8 @@ Game::Game(void)
 	SDL_SetRenderDrawColor(cRenderer,50,125,255,0);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY,"nearest");
 	SDL_RenderSetLogicalSize(cRenderer,800,600);
+	AllocConsole(); 
+	freopen("CONOUT$", "w", stdout);
 	Initialize();
 	while(!done)
 	{
@@ -100,7 +102,7 @@ void Game::doFrame(bool draw)
 }
 void Game::Initialize()
 {
-	objectGame = new GameObject("Images\jelly.png",CreateRect(128,128,120,120),CreateRect(128,128,120,120),cRenderer);
+	objectGame = new GameObject("jelly.png",CreateRect(128,128,0,0),CreateRect(128,128,120,120),cRenderer);
 }
 void Game::GetInput()
 {
@@ -124,7 +126,8 @@ void Game::Draw()
 {
 	GetInput();
 	SDL_RenderClear(cRenderer);
-	objectGame->Draw(cRenderer);
+	
+	objectGame->Draw();
 	SDL_RenderPresent(cRenderer);
 }
 Game::~Game(void)

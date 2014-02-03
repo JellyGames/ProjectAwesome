@@ -17,7 +17,7 @@ public:
 	GameObject(char* texturePath,SDL_Rect sourceRectangle,SDL_Rect destRect,SDL_Renderer* renderer);
 	~GameObject(void);
 	
-	void Draw(SDL_Renderer* renderer);
+	void Draw();
 	void Init();
 
 	//fields
@@ -26,6 +26,7 @@ public:
 	SDL_Rect sRect;
 	//position and actual size on screen
 	SDL_Rect dRect;
+	SDL_Renderer* cRenderer;
 
 	
 

@@ -1,5 +1,6 @@
 #ifndef _GAME_H_
 #define _GAME_H_
+
 #include <SDL.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -7,6 +8,7 @@
 #include <conio.h>
 #include <vector>
 #include <Windows.h> 
+#include <SDL_image.h>
 #include "GameObject.h"
 class Game
 {
