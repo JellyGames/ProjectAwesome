@@ -3,7 +3,7 @@ using namespace std;
 Game::Game(void)
 { 
 	done = false;
-	SDL_Window* window;
+	SDL_Window* window; 
 	SDL_Renderer* renderer;
 	SDL_CreateWindowAndRenderer(800,600,SDL_WINDOW_SHOWN,&window,&renderer);
 	cWindow = window;

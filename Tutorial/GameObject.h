@@ -12,7 +12,7 @@
 
 class GameObject
 {
-public:
+public: 
 	//methods
 	GameObject(char* texturePath,SDL_Rect sourceRectangle,SDL_Rect destRect,SDL_Renderer* renderer);
 	~GameObject(void);

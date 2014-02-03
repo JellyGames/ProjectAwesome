@@ -12,7 +12,7 @@
 #include "GameObject.h"
 class Game
 {
-public:
+public: 
 	//Methods
 	Game(void); 
 	~Game(void);
