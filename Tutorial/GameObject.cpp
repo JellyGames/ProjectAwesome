@@ -14,6 +14,7 @@ GameObject::GameObject(char* texturePath,SDL_Rect sourceRectangle,SDL_Rect destR
 	if(texture == NULL)
 	{
 		std::cout << "texture is 0" << std::endl;
+		IMG_GetError();
 	}
 	Init();
 }
