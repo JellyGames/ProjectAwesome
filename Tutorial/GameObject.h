@@ -32,7 +32,40 @@ public:
 	
 
 };
+class Hero :
+	public GameObject
+{
+public:
+	//Methods
+	Hero(char* texturePath,SDL_Rect sourceRect,SDL_Rect destRect,SDL_Renderer* renderer):GameObject(texturePath,sourceRect,destRect,renderer)
+	{	
+	sRect = sourceRect;
+	dRect = destRect;
+	cRenderer = renderer;
+	texture = IMG_LoadTexture(cRenderer,texturePath);
+	if(texture == NULL)
+	{
+		std::cout << "Texture is null" << std::endl;
+	}
+	Init();
+	}
+	~Hero();
+	void Init()
+	{
+		animationX = 0;
+		animationY= 0;
+		time = 0;
+	}
+	void MoveLeft();
+	void MoveRight();
+	void Animate();
 
+	//Fields
+	int animationX;
+	int animationY;
+	int time;
+	
+};
 
 #endif 
 

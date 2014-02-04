@@ -28,6 +28,7 @@ public:
 
 	//Fields
 	GameObject* objectGame;
+	Hero* testHero;
 	bool done;
 	SDL_Window* cWindow;
 	SDL_Renderer* cRenderer;

@@ -2,7 +2,6 @@
 #include "GameObject.h"
 using namespace std;
 
-
 GameObject::GameObject(char* texturePath,SDL_Rect sourceRectangle,SDL_Rect destRect,SDL_Renderer* renderer)
 { 
 	ifstream myfile (texturePath);

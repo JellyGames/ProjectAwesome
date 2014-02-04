@@ -83,7 +83,6 @@ void Game::resyncRenderFrameTime()//if we changed something big (like initializi
 }
 void Game::Update()
 {
-
 }
 void Game::doFrame(bool draw)
 {
@@ -103,6 +102,7 @@ void Game::doFrame(bool draw)
 void Game::Initialize()
 {
 	objectGame = new GameObject("jelly.png",CreateRect(128,128,0,0),CreateRect(128,128,0,0),cRenderer);
+	testHero = new Hero("knightly spritesheet.png",CreateRect(32,32,0,0),CreateRect(64,64,0,0),cRenderer);
 }
 void Game::GetInput()
 {
@@ -116,6 +116,12 @@ void Game::GetInput()
 			case SDLK_ESCAPE:
 				done = true;
 				break;
+			case SDLK_RIGHT:
+				testHero->MoveRight();
+				break;
+			case SDLK_LEFT:
+				testHero->MoveLeft();
+				break;
 			}
 
 		}
@@ -126,8 +132,9 @@ void Game::Draw()
 {
 	GetInput();
 	SDL_RenderClear(cRenderer);
-	
-	objectGame->Draw();
+	//objectGame->Draw();
+	testHero->Draw();
+	testHero->Animate();
 	SDL_RenderPresent(cRenderer);
 }
 Game::~Game(void)
