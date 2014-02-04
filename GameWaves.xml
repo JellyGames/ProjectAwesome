@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<easyWaves>
+  <meleeEnemy>
+    <health>
+    100
+    </health>
+    <exp>
+    50
+    </exp>
+    <gold>
+    25
+    </gold>
+    <damage>
+    20
+    </damage>
+    <damageTower>
+    10
+    </damageTower>
+  </meleeEnemy>
+  <rangeEnemy>
+    <health>
+    75
+    </health>
+    <exp>
+    60
+    </exp>
+    <gold>
+    50
+    </gold>
+    <damage>
+    35
+    </damage>
+    <damageTower>
+    20
+    </damageTower>
+  </rangeEnemy>
+  <siegeEnemy>
+    <health>
+    200
+    </health>
+    <exp>
+    100
+    </exp>
+    <gold>
+    75
+    </gold>
+    <damage>
+    50
+    </damage>
+    <damageTower>
+      100
+    </damageTower>
+  </siegeEnemy>
+
+</easyWaves>
