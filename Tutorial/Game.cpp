@@ -102,7 +102,7 @@ void Game::doFrame(bool draw)
 }
 void Game::Initialize()
 {
-	objectGame = new GameObject("jelly.png",CreateRect(128,128,0,0),CreateRect(128,128,120,120),cRenderer);
+	objectGame = new GameObject("jelly.png",CreateRect(128,128,0,0),CreateRect(128,128,0,0),cRenderer);
 }
 void Game::GetInput()
 {

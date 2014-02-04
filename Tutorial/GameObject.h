@@ -8,6 +8,7 @@
 #include <Windows.h>
 #include <SDL_image.h>
 #include <conio.h>
+#include <fstream>
 #include <vector>
 
 class GameObject
