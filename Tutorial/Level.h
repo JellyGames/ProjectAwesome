@@ -15,11 +15,17 @@ class Level
 {
 public:
 	//Methods
-	Level(void);
+	Level(SDL_Renderer* renderer);
 	~Level(void);
 	void Update();
 	void Draw();
+	void Init();
+	void KeyHandle();
+	void InitRect(SDL_Rect* rec,int h,int w,int x,int y); // used to initiliaze SDL_Rect
+	SDL_Rect CreateRect(int h ,int w,int x, int y);// used to create a new one out of nowhere
 	//fields
+	Hero* testHero;
+	SDL_Renderer* cRenderer;
 	
 
 };

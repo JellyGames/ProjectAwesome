@@ -15,6 +15,7 @@ GameObject::GameObject(char* texturePath,SDL_Rect sourceRectangle,SDL_Rect destR
 	cRenderer = renderer;
 	texture = NULL;
 	texture = IMG_LoadTexture(cRenderer,texturePath);
+	flip = false;
 	if(texture == NULL)
 	{
 		std::cout << "texture is 0" << std::endl;
@@ -28,7 +29,17 @@ void GameObject::Init()
 }
 void GameObject::Draw()
 {
-	SDL_RenderCopy(cRenderer,texture,&sRect,&dRect);
+		SDL_RendererFlip f;
+		if(flip)
+		{
+			f= SDL_FLIP_HORIZONTAL;
+			SDL_RenderCopyEx(cRenderer,texture,&sRect,&dRect,0,&sdlPoint,f);
+		}
+		else if(!flip)
+		{
+			f= SDL_FLIP_NONE;
+			SDL_RenderCopyEx(cRenderer,texture,&sRect,&dRect,0,&sdlPoint,f);
+		}
 }
 GameObject::~GameObject(void)
 {

@@ -22,6 +22,8 @@ public:
 	void Init();
 
 	//fields
+	bool flip;
+	SDL_Point sdlPoint;
 	SDL_Texture* texture;
 	//sprite size and offset for animations
 	SDL_Rect sRect;
