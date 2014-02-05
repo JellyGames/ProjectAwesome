@@ -10,6 +10,7 @@
 #include <Windows.h> 
 #include <SDL_image.h>
 #include "GameObject.h"
+#include "SplashScreen.h"
 class Game
 {
 public: 
@@ -29,12 +30,17 @@ public:
 	//Fields
 	GameObject* objectGame;
 	Hero* testHero;
+	SplashScreen* splashScreen;
 	bool done;
 	SDL_Window* cWindow;
 	SDL_Renderer* cRenderer;
 	unsigned int deltaTime;
 	unsigned int oldTime;
 	unsigned int newTime;
+
+private:
+	enum GameState { ShowingSplashScreen, ShowingMenu, ShowingOptions, Paused, Playing, Exiting, Victory, Defeat };
+	static GameState gameState;
 };
 
 #endif

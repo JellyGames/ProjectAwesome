@@ -2,6 +2,7 @@
 using namespace std;
 Game::Game(void)
 { 
+	AllocConsole(); 
 	done = false;
 	SDL_Window* window; 
 	SDL_Renderer* renderer;
@@ -11,7 +12,6 @@ Game::Game(void)
 	SDL_SetRenderDrawColor(cRenderer,50,125,255,0);
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY,"nearest");
 	SDL_RenderSetLogicalSize(cRenderer,800,600);
-	AllocConsole(); 
 	freopen("CONOUT$", "w", stdout);
 	Initialize();
 	while(!done)
@@ -103,6 +103,7 @@ void Game::Initialize()
 {
 	objectGame = new GameObject("jelly.png",CreateRect(128,128,0,0),CreateRect(128,128,0,0),cRenderer);
 	testHero = new Hero("knightly spritesheet.png",CreateRect(32,32,0,0),CreateRect(64,64,0,0),cRenderer);
+	splashScreen = new SplashScreen("Images/SplashScreen.png", CreateRect(600, 800, 0, 0), CreateRect(600, 800, 0, 0), cRenderer);
 }
 void Game::GetInput()
 {
@@ -125,6 +126,18 @@ void Game::GetInput()
 			}
 
 		}
+		if(e.type == SDL_MOUSEBUTTONDOWN)
+		{
+			if(gameState == ShowingSplashScreen)
+			{
+				cout << "mouse button pressed " << endl;
+				gameState = ShowingMenu;
+			}
+			else
+			{
+				cout << "ignore mouse" << endl;
+			}
+		}
 	}
 }
 
@@ -135,8 +148,15 @@ void Game::Draw()
 	//objectGame->Draw();
 	testHero->Draw();
 	testHero->Animate();
+	if(gameState == ShowingSplashScreen)
+	{
+		splashScreen->Draw();
+	}
 	SDL_RenderPresent(cRenderer);
 }
 Game::~Game(void)
 {
 }
+
+
+Game::GameState Game::gameState = ShowingSplashScreen;
