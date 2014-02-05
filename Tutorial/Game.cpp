@@ -135,6 +135,7 @@ void Game::GetInput()
 					cout << "mouse button pressed " << endl;
 					gameState = ShowingMenu;
 					delete splashScreen;
+					splashScreen = NULL;
 				}
 			}
 		}
@@ -143,6 +144,7 @@ void Game::GetInput()
 
 void Game::Draw()
 {
+	cout<<"drawing"<<endl;
 	GetInput();
 	SDL_RenderClear(cRenderer);
 	//objectGame->Draw();

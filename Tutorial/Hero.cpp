@@ -22,10 +22,10 @@ void Hero::Animate()
 void Hero::MoveLeft()
 {
 	animationY = 0;
-	dRect.x -= 5;
+	dRect.x -= 1;
 }
 void Hero::MoveRight()
 {
 	animationY = 0;
-	dRect.x +=5;
+	dRect.x +=1;
 }
