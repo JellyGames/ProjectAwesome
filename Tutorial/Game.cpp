@@ -128,14 +128,14 @@ void Game::GetInput()
 		}
 		if(e.type == SDL_MOUSEBUTTONDOWN)
 		{
-			if(gameState == ShowingSplashScreen)
+			if(splashScreen!=NULL)
 			{
-				cout << "mouse button pressed " << endl;
-				gameState = ShowingMenu;
-			}
-			else
-			{
-				cout << "ignore mouse" << endl;
+				if(gameState == ShowingSplashScreen)
+				{
+					cout << "mouse button pressed " << endl;
+					gameState = ShowingMenu;
+					delete splashScreen;
+				}
 			}
 		}
 	}
@@ -148,7 +148,7 @@ void Game::Draw()
 	//objectGame->Draw();
 	testHero->Draw();
 	testHero->Animate();
-	if(gameState == ShowingSplashScreen)
+	if(gameState == ShowingSplashScreen&&splashScreen!=NULL)
 	{
 		splashScreen->Draw();
 	}
